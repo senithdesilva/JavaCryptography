@@ -1,7 +1,9 @@
 package com.crypto.symmetric;
 
+import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
 import java.security.SecureRandom;
 
 public class SymmetricEncryption {
@@ -11,10 +13,11 @@ public class SymmetricEncryption {
     // CBC: Cipher Block Chaining
     // Padding of 5 and PKCS, which is a padding scheme
     // Here, we are going to pass in a block cipher
+    // format is "algorithm/mode/padding"
     private static final String AES_CIPHER_ALGORITHM = "AES/CBC/PKCS5Padding";
 
     // Create a random symmetric key
-    static SecretKey createAESKey() throws Exception{
+    static SecretKey createAESKey() throws Exception {
         // Create a SecureRandom instance
         // In the form of a pseudo-random number generator (PRNG)
         // They use a deterministic algorithm to produce a pseudo-random sequence from a true random seed
@@ -29,7 +32,7 @@ public class SymmetricEncryption {
 
     // To make each message unique, an Initialization Vector must be used in the first block.
     // Initialization Vector is the first step used to encrypt the plain text.
-    public static byte[] createInitializationVector(){
+    public static byte[] createInitializationVector() {
         // With a size of 16
         byte[] initializationVector = new byte[16];
 
@@ -39,5 +42,20 @@ public class SymmetricEncryption {
         secureRandom.nextBytes(initializationVector);
 
         return initializationVector;
+    }
+
+    public static byte[] AESEnryptionAlgorithm(final String plainText, final SecretKey secretKey, final byte[] initializationVector) throws Exception {
+        // Cipher Engine with the valid transformation.
+        // Here you can use different types of transformation. ex: DES/ECB/PKCS5Padding (56)
+        Cipher cipher = Cipher.getInstance(AES_CIPHER_ALGORITHM);
+
+        // This initializes a cipher with the init vector while encrypting the plain text.
+        // Wrapper for an init vector.
+        IvParameterSpec ivParameterSpec = new IvParameterSpec(initializationVector);
+
+        // Initialize cipher to encryption mode.
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParameterSpec);
+
+        return cipher.doFinal(plainText.getBytes());
     }
 }
