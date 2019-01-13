@@ -8,14 +8,14 @@ import javax.xml.bind.DatatypeConverter;
 import java.util.logging.Logger;
 
 public class SymmetricEncryptionTest {
-    private final static Logger logger = Logger.getLogger(SymmetricEncryptionTest.class.getName());
+    private final static Logger LOGGER = Logger.getLogger(SymmetricEncryptionTest.class.getName());
 
     @Test(priority = 1)
     public void testCreateAESKey() throws Exception {
         SecretKey key = SymmetricEncryption.createAESKey();
         Assert.assertNotNull(key);
         // log the HEXA Binary key code
-        logger.info( "Symmetric Key: " + DatatypeConverter.printHexBinary(key.getEncoded()));
+        LOGGER.info( "Symmetric Key: " + DatatypeConverter.printHexBinary(key.getEncoded()));
 
     }
 
@@ -25,16 +25,16 @@ public class SymmetricEncryptionTest {
         SecretKey key = SymmetricEncryption.createAESKey();
         // Generate the Initialization Vector
         byte[] initializationVector = SymmetricEncryption.createInitializationVector();
-        logger.info("Initialization Vector: " + DatatypeConverter.printHexBinary(initializationVector));
+        LOGGER.info("Initialization Vector: " + DatatypeConverter.printHexBinary(initializationVector));
 
         // Use whatever plainText
         final String plainText = "This is a demonstration of the AESEncryption Algorithm";
-        logger.info("Plain Text: " + plainText);
+        LOGGER.info("Plain Text: " + plainText);
 
         // perform the AES Encryption and return the cipher text.
         byte[] cipherText = SymmetricEncryption.AESEncryptionAlgorithm(plainText, key, initializationVector);
         Assert.assertNotNull(cipherText);
-        logger.info("Cipher Text: " + DatatypeConverter.printHexBinary(cipherText));
+        LOGGER.info("Cipher Text: " + DatatypeConverter.printHexBinary(cipherText));
 
         // Using the cipher text perform the AES Decryption
         testAESDecryptionAlgorithm(cipherText, key, initializationVector, plainText);
@@ -48,6 +48,6 @@ public class SymmetricEncryptionTest {
 
         Assert.assertEquals(plainText, decryptedText);
 
-        logger.info("Decrypted Text: " + decryptedText);
+        LOGGER.info("Decrypted Text: " + decryptedText);
     }
 }
