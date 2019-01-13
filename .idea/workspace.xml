@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="92d8c477-c2e9-4872-a0ea-7798c7ac637f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/crypto/symmetric/SymmetricEncryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crypto/symmetric/SymmetricEncryption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/crypto/symmetric/SymmetricEncryptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crypto/symmetric/SymmetricEncryptionTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,13 +41,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1615" />
+          <entry key="java" value="2780" />
           <entry key="xml" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1615" />
+          <entry key="JAVA" value="2780" />
           <entry key="XML" value="37" />
         </counts>
       </usages-collector>
@@ -54,11 +55,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/crypto/symmetric/SymmetricEncryption.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+            <state relative-caret-position="90">
+              <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/crypto/symmetric/SymmetricEncryptionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+            <state relative-caret-position="177">
+              <caret line="27" column="101" selection-start-line="27" selection-start-column="101" selection-end-line="27" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,8 +105,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/crypto/symmetric/SymmetricEncryptionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/crypto/symmetric/SymmetricEncryption.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/crypto/symmetric/SymmetricEncryptionTest.java" />
       </list>
     </option>
   </component>
@@ -132,7 +133,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="951" />
     <option name="width" value="978" />
     <option name="height" value="1039" />
@@ -176,7 +177,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547341522240" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547343580091" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -203,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.SymmetricEncryptionTest">
     <configuration name="SymmetricEncryptionTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="JavaCryptography" />
       <extension name="coverage">
@@ -220,9 +221,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SymmetricEncryptionTest.testAESEncryptionAlgorithm" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JavaCryptography" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.crypto.symmetric.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.crypto.symmetric" />
+      <option name="MAIN_CLASS_NAME" value="com.crypto.symmetric.SymmetricEncryptionTest" />
+      <option name="METHOD_NAME" value="testAESEncryptionAlgorithm" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="TestNG.SymmetricEncryptionTest" />
+      <item itemvalue="TestNG.SymmetricEncryptionTest.testAESEncryptionAlgorithm" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.SymmetricEncryptionTest" />
+        <item itemvalue="TestNG.SymmetricEncryptionTest.testAESEncryptionAlgorithm" />
       </list>
     </recent_temporary>
   </component>
@@ -258,6 +282,18 @@
     <history-entry file="SymmetricEncryptionTest - 2019.01.13 at 10h 33m 20s.xml">
       <configuration name="SymmetricEncryptionTest" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="SymmetricEncryptionTest - 2019.01.13 at 12h 29m 32s.xml">
+      <configuration name="SymmetricEncryptionTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SymmetricEncryptionTest_testAESEncryptionAlgorithm - 2019.01.13 at 12h 31m 26s.xml">
+      <configuration name="SymmetricEncryptionTest.testAESEncryptionAlgorithm" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SymmetricEncryptionTest - 2019.01.13 at 12h 31m 48s.xml">
+      <configuration name="SymmetricEncryptionTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SymmetricEncryptionTest - 2019.01.13 at 12h 33m 16s.xml">
+      <configuration name="SymmetricEncryptionTest" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -269,7 +305,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="761" y="0" width="782" height="831" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.5159501" />
@@ -282,17 +318,17 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32998565" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32998565" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3295129" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3295129" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998565" />
-      <window_info anchor="bottom" id="SonarLint" order="9" weight="0.32998565" />
+      <window_info anchor="bottom" id="SonarLint" order="9" weight="0.32907802" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32998565" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -322,16 +358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/crypto/symmetric/SymmetricEncryptionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -348,8 +374,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/crypto/symmetric/SymmetricEncryption.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+        <state relative-caret-position="90">
+          <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/crypto/symmetric/SymmetricEncryptionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="27" column="101" selection-start-line="27" selection-start-column="101" selection-end-line="27" selection-end-column="101" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -10,12 +10,44 @@ import java.util.logging.Logger;
 public class SymmetricEncryptionTest {
     private final static Logger logger = Logger.getLogger(SymmetricEncryptionTest.class.getName());
 
-    @Test
+    @Test(priority = 1)
     public void testCreateAESKey() throws Exception {
         SecretKey key = SymmetricEncryption.createAESKey();
         Assert.assertNotNull(key);
         // log the HEXA Binary key code
-        logger.info(DatatypeConverter.printHexBinary(key.getEncoded()));
+        logger.info( "Symmetric Key: " + DatatypeConverter.printHexBinary(key.getEncoded()));
 
+    }
+
+    @Test(priority = 2)
+    public void testAESEncryptionAlgorithm() throws Exception{
+        // Generate the Symmetric Key
+        SecretKey key = SymmetricEncryption.createAESKey();
+        // Generate the Initialization Vector
+        byte[] initializationVector = SymmetricEncryption.createInitializationVector();
+        logger.info("Initialization Vector: " + DatatypeConverter.printHexBinary(initializationVector));
+
+        // Use whatever plainText
+        final String plainText = "This is a demonstration of the AESEncryption Algorithm";
+        logger.info("Plain Text: " + plainText);
+
+        // perform the AES Encryption and return the cipher text.
+        byte[] cipherText = SymmetricEncryption.AESEncryptionAlgorithm(plainText, key, initializationVector);
+        Assert.assertNotNull(cipherText);
+        logger.info("Cipher Text: " + DatatypeConverter.printHexBinary(cipherText));
+
+        // Using the cipher text perform the AES Decryption
+        testAESDecryptionAlgorithm(cipherText, key, initializationVector, plainText);
+    }
+
+    private void testAESDecryptionAlgorithm(final byte[] cipherText,
+                                            final SecretKey key,
+                                            final byte[] initializationVector,
+                                            final String plainText) throws  Exception{
+        final String decryptedText = SymmetricEncryption.AESDecryptionAlgorithm(cipherText, key, initializationVector);
+
+        Assert.assertEquals(plainText, decryptedText);
+
+        logger.info("Decrypted Text: " + decryptedText);
     }
 }

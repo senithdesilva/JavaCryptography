@@ -32,6 +32,7 @@ public class SymmetricEncryption {
 
     // To make each message unique, an Initialization Vector must be used in the first block.
     // Initialization Vector is the first step used to encrypt the plain text.
+    // Initialization Vector is also used to decrypt the cipher text.
     public static byte[] createInitializationVector() {
         // With a size of 16
         byte[] initializationVector = new byte[16];
@@ -44,7 +45,7 @@ public class SymmetricEncryption {
         return initializationVector;
     }
 
-    public static byte[] AESEnryptionAlgorithm(final String plainText, final SecretKey secretKey, final byte[] initializationVector) throws Exception {
+    public static byte[] AESEncryptionAlgorithm(final String plainText, final SecretKey secretKey, final byte[] initializationVector) throws Exception {
         // Cipher Engine with the valid transformation.
         // Here you can use different types of transformation. ex: DES/ECB/PKCS5Padding (56)
         Cipher cipher = Cipher.getInstance(AES_CIPHER_ALGORITHM);
@@ -57,5 +58,18 @@ public class SymmetricEncryption {
         cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParameterSpec);
 
         return cipher.doFinal(plainText.getBytes());
+    }
+
+    public static String AESDecryptionAlgorithm(final byte[] cipherText, final SecretKey secretKey, final byte[] initializationVector) throws Exception {
+        // very much similar to encryption
+        Cipher cipher = Cipher.getInstance(AES_CIPHER_ALGORITHM);
+        IvParameterSpec ivParameterSpec = new IvParameterSpec(initializationVector);
+
+        // But with DECRYPT Mode
+        cipher.init(Cipher.DECRYPT_MODE, secretKey, ivParameterSpec);
+
+        // Conclusion of operation
+        byte[] result = cipher.doFinal(cipherText);
+        return new String(result);
     }
 }
