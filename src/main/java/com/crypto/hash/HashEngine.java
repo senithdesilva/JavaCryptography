@@ -4,20 +4,23 @@ import java.io.ByteArrayOutputStream;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 
-public class HashEngine {
+class HashEngine {
     private static final String SHA2_AlGORITHM = "SHA-256";
 
-    public static byte[] generateSalt() {
+    static byte[] generateSalt() {
         byte[] salt = new byte[16];
         SecureRandom secureRandom = new SecureRandom();
         secureRandom.nextBytes(salt);
         return salt;
     }
 
-    public static byte[] createSHA2Hash(final String input, final byte[] salt) throws Exception {
+    static byte[] createSHA2Hash(final String input, final byte[] salt) throws Exception {
+        // Data can be written into a byte array.
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         byteArrayOutputStream.write(salt);
         byteArrayOutputStream.write(input.getBytes());
+
+        // The data can be retrieved using toByteArray() and toString()
         byte[] valueToHash = byteArrayOutputStream.toByteArray();
 
         // Message digests are secure one-way hash functions
